@@ -1,0 +1,6 @@
+﻿services:
+  auth.webapi:
+    image: auth.webapi
+    build:
+      context: .
+      dockerfile: Auth.WebApi/Dockerfile

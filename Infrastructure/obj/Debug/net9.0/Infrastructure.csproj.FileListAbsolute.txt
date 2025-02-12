@@ -1,0 +1,15 @@
+/Users/home/Documents/GitHub/commerce/microservices/Infrastructure/bin/Debug/net9.0/Infrastructure.deps.json
+/Users/home/Documents/GitHub/commerce/microservices/Infrastructure/bin/Debug/net9.0/Infrastructure.runtimeconfig.json
+/Users/home/Documents/GitHub/commerce/microservices/Infrastructure/bin/Debug/net9.0/Infrastructure.dll
+/Users/home/Documents/GitHub/commerce/microservices/Infrastructure/bin/Debug/net9.0/Infrastructure.pdb
+/Users/home/Documents/GitHub/commerce/microservices/Infrastructure/obj/Debug/net9.0/Infrastructure.csproj.AssemblyReference.cache
+/Users/home/Documents/GitHub/commerce/microservices/Infrastructure/obj/Debug/net9.0/Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+/Users/home/Documents/GitHub/commerce/microservices/Infrastructure/obj/Debug/net9.0/Infrastructure.AssemblyInfoInputs.cache
+/Users/home/Documents/GitHub/commerce/microservices/Infrastructure/obj/Debug/net9.0/Infrastructure.AssemblyInfo.cs
+/Users/home/Documents/GitHub/commerce/microservices/Infrastructure/obj/Debug/net9.0/Infrastructure.csproj.CoreCompileInputs.cache
+/Users/home/Documents/GitHub/commerce/microservices/Infrastructure/obj/Debug/net9.0/Infrastructure.sourcelink.json
+/Users/home/Documents/GitHub/commerce/microservices/Infrastructure/obj/Debug/net9.0/Infrastructure.dll
+/Users/home/Documents/GitHub/commerce/microservices/Infrastructure/obj/Debug/net9.0/refint/Infrastructure.dll
+/Users/home/Documents/GitHub/commerce/microservices/Infrastructure/obj/Debug/net9.0/Infrastructure.pdb
+/Users/home/Documents/GitHub/commerce/microservices/Infrastructure/obj/Debug/net9.0/Infrastructure.genruntimeconfig.cache
+/Users/home/Documents/GitHub/commerce/microservices/Infrastructure/obj/Debug/net9.0/ref/Infrastructure.dll
