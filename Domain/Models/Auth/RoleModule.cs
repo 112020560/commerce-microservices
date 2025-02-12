@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Infrastructure;
+﻿namespace Domain.Models.Auth;
 
 public partial class RoleModule
 {

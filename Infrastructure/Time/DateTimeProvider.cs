@@ -1,8 +1,9 @@
 using System;
+using SharedKernel;
 
 namespace Infrastructure.Time;
 
-public class DateTimeProvider
+internal sealed class DateTimeProvider : IDateTimeProvider
 {
-
+    public DateTime UtcNow => DateTime.UtcNow;
 }

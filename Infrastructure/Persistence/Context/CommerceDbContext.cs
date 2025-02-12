@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Domain.Models.Auth;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Persistence.Context;

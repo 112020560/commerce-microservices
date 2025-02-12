@@ -2,7 +2,7 @@ using System;
 using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore.Query;
 
-namespace Application.Auth.Data;
+namespace Application.Abstractions.Data;
 
 public interface IRepository<TEntity> where TEntity : class
 {
@@ -15,4 +15,6 @@ public interface IRepository<TEntity> where TEntity : class
     Task<IList<TEntity>> FindByFilterAsync(Expression<Func<TEntity, bool>> filter);
     Task<IList<TEntity>> FindAllAsync();
     Task UpdateCommonAsync(TEntity entity);
+    Task<bool>  ExistsAsync(Expression<Func<TEntity, bool>> filter,  CancellationToken cancellationToken);
+    Task<int> CountAsync(Expression<Func<TEntity, bool>> filter);
 }
