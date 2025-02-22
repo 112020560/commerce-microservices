@@ -1,9 +1,11 @@
 using System.Text;
 using Application.Abstractions.Authentication;
 using Application.Abstractions.Data;
+using Application.Abstractions.Data.Auth;
 using Infrastructure.Authentication;
 using Infrastructure.Persistence.Context;
 using Infrastructure.Persistence.Repositories;
+using Infrastructure.Persistence.Repositories.Auth;
 using Infrastructure.Time;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
@@ -16,6 +18,15 @@ namespace Infrastructure;
 
 public static class DependencyInjection
 {
+    public static IServiceCollection AddInfrastructure(
+        this IServiceCollection services,
+        IConfiguration configuration) =>
+        services
+            .AddServices()
+            .AddDatabase(configuration)
+            .AddHealthChecks(configuration)
+            .AddAuthenticationInternal(configuration);
+            //.AddAuthorizationInternal();
     private static IServiceCollection AddServices(this IServiceCollection services)
     {
         services.AddSingleton<IDateTimeProvider, DateTimeProvider>();
@@ -36,7 +47,7 @@ public static class DependencyInjection
         });
 
         services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
-
+        services.AddScoped<IAuthUnitOfWork, AuthUnitOfWork>();
         return services;
     }
 

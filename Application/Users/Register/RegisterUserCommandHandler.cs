@@ -6,7 +6,7 @@ using SharedKernel;
 
 namespace Application.Users.Register;
 
-internal sealed class RegisterUserCommandHandler : ICommandHandler<RegisterUserCommand>
+internal sealed class RegisterUserCommandHandler : ICommandHandler<RegisterUserCommand, ResponseObject>
 {
     private readonly IAuthUnitOfWork _authUnitOfWork;
     private readonly IPasswordHasher _passwordHasher;
@@ -17,11 +17,11 @@ internal sealed class RegisterUserCommandHandler : ICommandHandler<RegisterUserC
         _passwordHasher = passwordHasher;
         _dateTimeProvider = dateTimeProvider;
     }
-    public async Task<Result> Handle(RegisterUserCommand request, CancellationToken cancellationToken)
+    public async Task<Result<ResponseObject>> Handle(RegisterUserCommand request, CancellationToken cancellationToken)
     {
         if (await _authUnitOfWork.UserRepository.ExistsAsync(x => x.Username == request.UserName, cancellationToken))
         {
-            return Result.Failure<Guid>(new Error("Duplicated", "User already exists", ErrorType.Validation));
+            return Result.Failure<ResponseObject>(new Error("Duplicated", "User already exists", ErrorType.Validation));
         }
 
         List<UserRole> userRoles = [];
@@ -36,15 +36,19 @@ internal sealed class RegisterUserCommandHandler : ICommandHandler<RegisterUserC
             Password = _passwordHasher.Hash(request.Password),
             FullName = request.FullName,
             CreateAt = _dateTimeProvider.UtcNow,
-            CreateBy = request.SystemUser?? "system",
+            CreateBy = request.SystemUser ?? "system",
             UpdateAt = _dateTimeProvider.UtcNow,
-            UpdateBy = request.SystemUser?? "system",
+            UpdateBy = request.SystemUser ?? "system",
             IsEnable = true,
             UserRoles = userRoles
         };
 
-        await _authUnitOfWork.UserRepository.CreateAsync(user);
+        var entity = await _authUnitOfWork.UserRepository.CreateAsync(user);
 
-        return Result.Success();
+        return new ResponseObject {
+            IsSuccess = true,
+            Message = "User created successfully",
+            Timestamp = _dateTimeProvider.UtcNow,
+        };
     }
 }

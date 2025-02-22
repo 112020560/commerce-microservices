@@ -13,3 +13,10 @@
 /Users/home/Documents/GitHub/commerce/microservices/Infrastructure/obj/Debug/net9.0/Infrastructure.pdb
 /Users/home/Documents/GitHub/commerce/microservices/Infrastructure/obj/Debug/net9.0/Infrastructure.genruntimeconfig.cache
 /Users/home/Documents/GitHub/commerce/microservices/Infrastructure/obj/Debug/net9.0/ref/Infrastructure.dll
+/Users/home/Documents/GitHub/commerce/microservices/Infrastructure/bin/Debug/net9.0/Application.dll
+/Users/home/Documents/GitHub/commerce/microservices/Infrastructure/bin/Debug/net9.0/Domain.dll
+/Users/home/Documents/GitHub/commerce/microservices/Infrastructure/bin/Debug/net9.0/SharedKernel.dll
+/Users/home/Documents/GitHub/commerce/microservices/Infrastructure/bin/Debug/net9.0/Application.pdb
+/Users/home/Documents/GitHub/commerce/microservices/Infrastructure/bin/Debug/net9.0/Domain.pdb
+/Users/home/Documents/GitHub/commerce/microservices/Infrastructure/bin/Debug/net9.0/SharedKernel.pdb
+/Users/home/Documents/GitHub/commerce/microservices/Infrastructure/obj/Debug/net9.0/Infrastr.15EFFBFE.Up2Date

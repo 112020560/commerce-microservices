@@ -10,4 +10,4 @@ public sealed record RegisterUserCommand(
     string FullName,
     string? SystemUser,
     int[]? Roles
-    ): ICommand;
+    ): ICommand<ResponseObject>;
