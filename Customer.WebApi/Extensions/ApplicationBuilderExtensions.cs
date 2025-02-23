@@ -1,6 +1,4 @@
-using System;
-
-namespace Auth.WebApi.Extensions;
+namespace Customer.WebApi.Extensions;
 
 public static class ApplicationBuilderExtensions
 {

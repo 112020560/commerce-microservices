@@ -1,9 +1,8 @@
-using System;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using SharedKernel.Exceptions;
 
-namespace Auth.WebApi.Infrastructure;
+namespace Customer.WebApi.Infrastructure;
 
 internal sealed class GlobalExceptionHandler(ILogger<GlobalExceptionHandler> logger)
     : IExceptionHandler

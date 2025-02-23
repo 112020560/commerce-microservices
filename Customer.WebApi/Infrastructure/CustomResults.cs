@@ -1,7 +1,6 @@
-using System;
 using SharedKernel;
 
-namespace Auth.WebApi.Infrastructure;
+namespace Customer.WebApi.Infrastructure;
 
 public static class CustomResults
 {

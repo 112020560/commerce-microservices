@@ -1,6 +1,6 @@
-using Auth.WebApi.Middleware;
+using Customer.WebApi.Middleware;
 
-namespace Auth.WebApi.Extensions;
+namespace Customer.WebApi.Extensions;
 
 public static class MiddlewareExtensions
 {

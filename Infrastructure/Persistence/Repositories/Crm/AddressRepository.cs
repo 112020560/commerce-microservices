@@ -2,7 +2,7 @@ using System;
 using Application.Abstractions.Data.Crm;
 using Infrastructure.Persistence.Context;
 
-namespace Infrastructure.Persistence.Repositories.Crm.Repositories;
+namespace Infrastructure.Persistence.Repositories.Crm;
 
 internal sealed class AddressRepository: IAddressRepository
 {

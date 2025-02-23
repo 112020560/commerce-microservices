@@ -1,70 +1,73 @@
-﻿using Domain.Models.Auth;
+﻿using Application.Abstractions.Data;
+using Domain.Models.Auth;
 using Domain.Models.crm;
 using Domain.Models.retail;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Persistence.Context;
 
-public partial class CommerceDbContext : DbContext
+public partial class CommerceDbContext : DbContext, IApplicationDbContext
 {
-    public CommerceDbContext()
-    {
-    }
 
     public CommerceDbContext(DbContextOptions<CommerceDbContext> options)
         : base(options)
     {
     }
 
-    public virtual DbSet<Address> Addresses { get; set; }
+    public virtual DbSet<Address> Addresses { get;}
 
-    public virtual DbSet<AddressType> AddressTypes { get; set; }
+    public virtual DbSet<AddressType> AddressTypes { get;}
 
-    public virtual DbSet<Domain.Models.crm.Attribute> Attributes { get; set; }
+    public virtual DbSet<Domain.Models.crm.Attribute> Attributes { get;}
 
-    public virtual DbSet<AttributesDataType> AttributesDataTypes { get; set; }
+    public virtual DbSet<AttributesDataType> AttributesDataTypes { get;}
 
-    public virtual DbSet<Brand> Brands { get; set; }
+    public virtual DbSet<Brand> Brands { get;}
 
-    public virtual DbSet<Category> Categories { get; set; }
+    public virtual DbSet<Category> Categories { get; }
 
-    public virtual DbSet<Document> Documents { get; set; }
+    public virtual DbSet<Document> Documents { get;  }
 
-    public virtual DbSet<DocumentDetail> DocumentDetails { get; set; }
+    public virtual DbSet<DocumentDetail> DocumentDetails { get;  }
 
-    public virtual DbSet<DocumentStatus> DocumentStatuses { get; set; }
+    public virtual DbSet<DocumentStatus> DocumentStatuses { get;}
 
-    public virtual DbSet<DocumentType> DocumentTypes { get; set; }
+    public virtual DbSet<DocumentType> DocumentTypes { get; }
 
-    public virtual DbSet<Inventory> Inventories { get; set; }
+    public virtual DbSet<Inventory> Inventories { get; }
 
-    public virtual DbSet<InventoryMovement> InventoryMovements { get; set; }
+    public virtual DbSet<InventoryMovement> InventoryMovements { get;  }
 
-    public virtual DbSet<InventoryMovementDetail> InventoryMovementDetails { get; set; }
+    public virtual DbSet<InventoryMovementDetail> InventoryMovementDetails { get; }
 
-    public virtual DbSet<Location> Locations { get; set; }
+    public virtual DbSet<Location> Locations { get; }
 
-    public virtual DbSet<MenuOption> MenuOptions { get; set; }
+    public virtual DbSet<MenuOption> MenuOptions { get;}
 
-    public virtual DbSet<Module> Modules { get; set; }
+    public virtual DbSet<Module> Modules { get;  }
 
-    public virtual DbSet<Person> People { get; set; }
+    public virtual DbSet<Person> People { get; }
 
-    public virtual DbSet<PersonRelationship> PersonRelationships { get; set; }
+    public virtual DbSet<PersonRelationship> PersonRelationships { get;  }
 
-    public virtual DbSet<PersonType> PersonTypes { get; set; }
+    public virtual DbSet<PersonType> PersonTypes { get;  }
 
-    public virtual DbSet<Product> Products { get; set; }
+    public virtual DbSet<Product> Products { get; }
 
-    public virtual DbSet<RelationshipType> RelationshipTypes { get; set; }
+    public virtual DbSet<RelationshipType> RelationshipTypes { get;  }
 
-    public virtual DbSet<Role> Roles { get; set; }
+    public virtual DbSet<Role> Roles { get; }
 
-    public virtual DbSet<RoleModule> RoleModules { get; set; }
+    public virtual DbSet<RoleModule> RoleModules { get;  }
 
-    public virtual DbSet<User> Users { get; set; }
+    public virtual DbSet<User> Users { get;  }
 
-    public virtual DbSet<UserRole> UserRoles { get; set; }
+    public virtual DbSet<UserRole> UserRoles { get;  }
+
+    public IQueryable<T> Query<T>() where T : class
+    {
+        return Set<T>();
+    }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

@@ -1,34 +1,35 @@
 using Application.Abstractions.Authentication;
-using Application.Abstractions.Data.Auth;
+using Application.Abstractions.Data;
 using Application.Abstractions.Messaging;
 using Domain.Models.Auth;
+using Microsoft.EntityFrameworkCore;
 using SharedKernel;
 
 namespace Application.Users.Register;
 
 internal sealed class RegisterUserCommandHandler : ICommandHandler<RegisterUserCommand, ResponseObject>
 {
-    private readonly IAuthUnitOfWork _authUnitOfWork;
+    private readonly IApplicationDbContext _dbContext;
     private readonly IPasswordHasher _passwordHasher;
     private readonly IDateTimeProvider _dateTimeProvider;
-    public RegisterUserCommandHandler(IAuthUnitOfWork authUnitOfWork, IPasswordHasher passwordHasher, IDateTimeProvider dateTimeProvider)
+    public RegisterUserCommandHandler(IApplicationDbContext dbContext, IPasswordHasher passwordHasher, IDateTimeProvider dateTimeProvider)
     {
-        _authUnitOfWork = authUnitOfWork;
+        _dbContext = dbContext;
         _passwordHasher = passwordHasher;
         _dateTimeProvider = dateTimeProvider;
     }
     public async Task<Result<ResponseObject>> Handle(RegisterUserCommand request, CancellationToken cancellationToken)
     {
-        if (await _authUnitOfWork.UserRepository.ExistsAsync(x => x.Username == request.UserName, cancellationToken))
+        bool userExists = await _dbContext.Query<User>()
+                                    .AsNoTracking()
+                                    .AnyAsync(x => x.Username == request.UserName, cancellationToken);
+        if (userExists)
         {
             return Result.Failure<ResponseObject>(new Error("Duplicated", "User already exists", ErrorType.Validation));
         }
 
-        List<UserRole> userRoles = [];
-        if (request.Roles is not null && request.Roles.Length > 0)
-        {
-            userRoles = request.Roles.Select(x => new UserRole() { RoleId = x }).ToList();
-        }
+        List<UserRole>? userRoles = request.Roles?.Select(x => new UserRole { RoleId = x }).ToList();
+        string createdBy = request.SystemUser ?? "system";
 
         var user = new User()
         {
@@ -36,14 +37,15 @@ internal sealed class RegisterUserCommandHandler : ICommandHandler<RegisterUserC
             Password = _passwordHasher.Hash(request.Password),
             FullName = request.FullName,
             CreateAt = _dateTimeProvider.UtcNow,
-            CreateBy = request.SystemUser ?? "system",
+            CreateBy = createdBy,
             UpdateAt = _dateTimeProvider.UtcNow,
-            UpdateBy = request.SystemUser ?? "system",
+            UpdateBy = createdBy,
             IsEnable = true,
-            UserRoles = userRoles
+            UserRoles = userRoles ?? []
         };
 
-        var entity = await _authUnitOfWork.UserRepository.CreateAsync(user);
+        var entity = await _dbContext.Users.AddAsync(user, cancellationToken);
+        await _dbContext.SaveChangesAsync(cancellationToken);
 
         return new ResponseObject {
             IsSuccess = true,

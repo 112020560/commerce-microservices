@@ -1,8 +1,7 @@
-using System;
 using Microsoft.Extensions.Primitives;
 using Serilog.Context;
 
-namespace Auth.WebApi.Middleware;
+namespace Customer.WebApi.Middleware;
 
 public class RequestContextLoggingMiddleware(RequestDelegate next)
 {

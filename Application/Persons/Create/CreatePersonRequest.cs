@@ -1,4 +1,4 @@
-namespace Application.Person.Create;
+namespace Application.Persons.Create;
 
 public record CreatePersonRequest
 {
@@ -7,9 +7,9 @@ public record CreatePersonRequest
 
     public int CatPersonStatus { get; set; }
 
-    public string? FirstName { get; set; } = null!;
+    public string FirstName { get; set; } = null!;
 
-    public string? LastName { get; set; } = null!;
+    public string LastName { get; set; } = null!;
 
     public string? Email { get; set; }
 

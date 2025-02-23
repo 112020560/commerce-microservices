@@ -2,10 +2,14 @@ using System.Text;
 using Application.Abstractions.Authentication;
 using Application.Abstractions.Data;
 using Application.Abstractions.Data.Auth;
+using Application.Abstractions.Data.Crm;
+using Application.Abstractions.Data.Retail;
 using Infrastructure.Authentication;
 using Infrastructure.Persistence.Context;
 using Infrastructure.Persistence.Repositories;
 using Infrastructure.Persistence.Repositories.Auth;
+using Infrastructure.Persistence.Repositories.Crm;
+using Infrastructure.Persistence.Repositories.Retail;
 using Infrastructure.Time;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
@@ -46,8 +50,24 @@ public static class DependencyInjection
                 .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
         });
 
+        services.AddScoped<IApplicationDbContext>(provider => provider.GetRequiredService<CommerceDbContext>());
+
         services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
         services.AddScoped<IAuthUnitOfWork, AuthUnitOfWork>();
+        //Repositories
+        //Auth
+        services.AddScoped<IUserRepository, UserRepository>();
+        //Crm
+        services.AddScoped<IAddressRepository, AddressRepository>();
+        services.AddScoped<IAttributeRepository, AttributeRepository>();
+        services.AddScoped<IPersonRelationshipRepository, PersonRelationshipRepository>();
+        services.AddScoped<IPersonRepository, PersonRepository>();
+        //Retail
+        services.AddScoped<IProductRepository, ProductRepository>();
+        services.AddScoped<IDocumentsRepository, DocumentsRepository>();
+        services.AddScoped<IInventoryMovementRepository, InventoryMovementRepository>();
+        services.AddScoped<IInventoryRepository, InventoryRepository>();
+
         return services;
     }
 

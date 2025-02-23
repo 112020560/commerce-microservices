@@ -1,8 +1,7 @@
 using System;
+using Application.Abstractions.Messaging;
+using SharedKernel;
 
 namespace Application.Customers.Create;
 
-public class CreateCustomerCommand
-{
-
-}
+public record CreateCustomerCommand():ICommand<ResponseObject>;

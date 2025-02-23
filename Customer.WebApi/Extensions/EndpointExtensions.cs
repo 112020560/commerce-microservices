@@ -1,9 +1,8 @@
-using System;
 using System.Reflection;
-using Auth.WebApi.Endpoits;
+using Customer.WebApi.Endpoits;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 
-namespace Auth.WebApi.Extensions;
+namespace Customer.WebApi.Extensions;
 
 public static class EndpointExtensions
 {

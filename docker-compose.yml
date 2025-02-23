@@ -4,3 +4,9 @@
     build:
       context: .
       dockerfile: Auth.WebApi/Dockerfile
+
+  customer.webapi:
+    image: customer.webapi
+    build:
+      context: .
+      dockerfile: Customer.WebApi/Dockerfile
