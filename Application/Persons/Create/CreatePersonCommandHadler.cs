@@ -19,6 +19,8 @@ public class CreatePersonCommandHadler : ICommandHandler<CreatePersonCommand, Re
     }
     public async Task<Result<ResponseObject>> Handle(CreatePersonCommand request, CancellationToken cancellationToken)
     {
+        cancellationToken.ThrowIfCancellationRequested();
+
         var person = await _dbContext.Query<Person>().FirstOrDefaultAsync(x => x.Id == request.PersonRequest.Id, cancellationToken);
 
         var attributes = request.PersonRequest.PersonAttributtes != null ?
@@ -37,7 +39,8 @@ public class CreatePersonCommandHadler : ICommandHandler<CreatePersonCommand, Re
                 Country = att.Country,
                 State = att.State,
                 PostalCode = att.ZipCode,
-                Address1 = $"{att.Street} - {att.Neighborhood} - {att.Complement}"
+                Address1 = $"{att.Street} - {att.Neighborhood} - {att.Complement}",
+                 Type = att.Type
             }) : [];
 
         if (person is null)
@@ -52,10 +55,12 @@ public class CreatePersonCommandHadler : ICommandHandler<CreatePersonCommand, Re
                 CreateAt = _dateTimeProvider.UtcNow,
                 UpdateAt = _dateTimeProvider.UtcNow,
                 Attributes = [.. attributes],
-                Addresses = [..addressList]
+                Addresses = [..addressList],
+                TypeId = request.PersonRequest.TypeId,
+                StatusId = request.PersonRequest.StatusId
             };
 
-            await _dbContext.People.AddAsync(newPerson, cancellationToken);
+            await _dbContext.Person.AddAsync(newPerson, cancellationToken);
         }
         else {
             person.FirstName = request.PersonRequest.FirstName;
@@ -66,7 +71,7 @@ public class CreatePersonCommandHadler : ICommandHandler<CreatePersonCommand, Re
             person.UpdateAt = _dateTimeProvider.UtcNow;
             person.Attributes = [.. attributes];
             person.Addresses = [..addressList];
-            _dbContext.People.Update(person);
+            _dbContext.Person.Update(person);
         }
 
 
@@ -76,6 +81,7 @@ public class CreatePersonCommandHadler : ICommandHandler<CreatePersonCommand, Re
         {
             IsSuccess = true,
             Message = "Person created successfully",
+            Timestamp = _dateTimeProvider.UtcNow
         }, true, Error.None);
     }
 }

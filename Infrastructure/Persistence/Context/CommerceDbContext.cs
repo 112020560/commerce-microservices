@@ -46,7 +46,7 @@ public partial class CommerceDbContext : DbContext, IApplicationDbContext
 
     public virtual DbSet<Module> Modules { get;  }
 
-    public virtual DbSet<Person> People { get; }
+    public DbSet<Person> Person { get; set;}
 
     public virtual DbSet<PersonRelationship> PersonRelationships { get;  }
 
@@ -514,8 +514,8 @@ public partial class CommerceDbContext : DbContext, IApplicationDbContext
             entity.Property(e => e.BirthDate)
                 .HasColumnType("timestamp without time zone")
                 .HasColumnName("birth_date");
-            entity.Property(e => e.CatPersonStatus).HasColumnName("cat_person_status");
-            entity.Property(e => e.CatPersonTypeId).HasColumnName("cat_person_type_id");
+            entity.Property(e => e.StatusId).HasColumnName("status_id");
+            entity.Property(e => e.TypeId).HasColumnName("type_id");
             entity.Property(e => e.CreateAt)
                 .HasDefaultValueSql("now()")
                 .HasColumnType("timestamp without time zone")

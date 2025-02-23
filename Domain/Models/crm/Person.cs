@@ -7,9 +7,9 @@ public partial class Person
 {
     public Guid Id { get; set; }
 
-    public int CatPersonTypeId { get; set; }
+    public int TypeId { get; set; }
 
-    public int CatPersonStatus { get; set; }
+    public Guid StatusId { get; set; }
 
     public string FirstName { get; set; } = null!;
 

@@ -3,9 +3,9 @@ namespace Application.Persons.Create;
 public record CreatePersonRequest
 {
     public Guid? Id { get; set; }
-    public int CatPersonTypeId { get; set; }
+    public int TypeId { get; set; }
 
-    public int CatPersonStatus { get; set; }
+    public Guid StatusId { get; set; }
 
     public string FirstName { get; set; } = null!;
 
@@ -47,5 +47,6 @@ public record PersonAddress
     public string Country { get; set; } = null!;
 
     public string ZipCode { get; set; } = null!;
+    public int Type { get; set; }
 
 }

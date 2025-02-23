@@ -1,4 +1,6 @@
-﻿namespace Domain.Models.crm;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Domain.Models.crm;
 
 public partial class Address
 {
@@ -11,6 +13,8 @@ public partial class Address
     public string? City { get; set; }
 
     public string? Country { get; set; }
+
+    [Column(name:"state")]
     public string?  State { get; set; }
 
     public string? PostalCode { get; set; }

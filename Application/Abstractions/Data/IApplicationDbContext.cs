@@ -40,7 +40,7 @@ public interface IApplicationDbContext
 
     DbSet<Module> Modules { get;  }
 
-    DbSet<Person> People { get;  }
+    DbSet<Person> Person { get; set; }
 
     DbSet<PersonRelationship> PersonRelationships { get;  }
 
