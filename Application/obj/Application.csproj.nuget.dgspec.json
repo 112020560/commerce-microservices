@@ -55,6 +55,10 @@
               "target": "Package",
               "version": "[11.11.0, )"
             },
+            "LinqKit.Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.8, )"
+            },
             "MediatR": {
               "target": "Package",
               "version": "[12.4.1, )"

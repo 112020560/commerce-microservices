@@ -4,4 +4,4 @@ using SharedKernel;
 
 namespace Application.Persons.Get;
 
-public record GetAllPersonsQuery(GetCustomerRequest Request): IQuery<ResponseObject<CustomPersonResponse>>;
+public record GetAllPersonsQuery(GetCustomerRequest Request): IQuery<ResponseObject<List<CustomPersonResponse>>>;

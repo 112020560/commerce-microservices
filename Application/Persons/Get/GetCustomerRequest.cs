@@ -1,6 +1,3 @@
 namespace Application.Persons.Get;
 
-public record class GetCustomerRequest
-{
-
-}
+public record  GetCustomerRequest(Guid? Id, int Type, Guid? Status, string? Name, int PageSize, int PageNumber);

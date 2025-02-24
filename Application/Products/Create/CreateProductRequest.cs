@@ -1,4 +1,4 @@
-namespace Application.Products;
+namespace Application.Products.Create;
 
 public record CreateProductRequest
 {

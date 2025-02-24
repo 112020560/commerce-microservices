@@ -24,6 +24,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedKernel", "SharedKerne
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Customer.WebApi", "Customer.WebApi\Customer.WebApi.csproj", "{CAD1856E-EC8A-474E-95BB-738778784D27}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inventory.WebApi", "Inventory.WebApi\Inventory.WebApi.csproj", "{91F382FF-77D2-4A58-B35E-4E1906E12B9B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,6 +42,7 @@ Global
 		{278F6410-EDA9-41B5-96C2-5114F2CD29BC} = {D8F8C963-6E00-47D7-97B6-0F093019DDEB}
 		{98F5CD92-0BE0-4F14-80F6-699896447D45} = {AB4A018B-56D6-47F4-9DE6-817FFAF343EC}
 		{CAD1856E-EC8A-474E-95BB-738778784D27} = {D8F8C963-6E00-47D7-97B6-0F093019DDEB}
+		{91F382FF-77D2-4A58-B35E-4E1906E12B9B} = {D8F8C963-6E00-47D7-97B6-0F093019DDEB}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{5E7EA41A-6384-4E5D-B449-7D5F40353CA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -66,5 +69,9 @@ Global
 		{CAD1856E-EC8A-474E-95BB-738778784D27}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CAD1856E-EC8A-474E-95BB-738778784D27}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CAD1856E-EC8A-474E-95BB-738778784D27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91F382FF-77D2-4A58-B35E-4E1906E12B9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91F382FF-77D2-4A58-B35E-4E1906E12B9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91F382FF-77D2-4A58-B35E-4E1906E12B9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91F382FF-77D2-4A58-B35E-4E1906E12B9B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

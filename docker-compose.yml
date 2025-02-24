@@ -10,3 +10,9 @@
     build:
       context: .
       dockerfile: Customer.WebApi/Dockerfile
+
+  inventory.webapi:
+    image: inventory.webapi
+    build:
+      context: .
+      dockerfile: Inventory.WebApi/Dockerfile

@@ -9,6 +9,7 @@ public class ResponseObject<T>
     public DateTime Timestamp { get; set; }
     public string? Message { get; set; }
     public Exception? Exception { get; set; }
+    public int TotalsRecords { get; set; }
 }
 
 public class ResponseObject

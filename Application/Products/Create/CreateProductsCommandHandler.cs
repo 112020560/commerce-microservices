@@ -5,7 +5,7 @@ using Domain.Models.retail;
 using Microsoft.EntityFrameworkCore;
 using SharedKernel;
 
-namespace Application.Products;
+namespace Application.Products.Create;
 
 internal sealed class CreateProductsCommandHandler : ICommandHandler<CreateProductsCommand, ResponseObject>
 {

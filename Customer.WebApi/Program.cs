@@ -1,5 +1,7 @@
 using System.Reflection;
 using Application;
+using Asp.Versioning;
+using Asp.Versioning.Builder;
 using Auth.WebApi.Extensions;
 using Customer.WebApi;
 using Customer.WebApi.Extensions;
@@ -20,11 +22,21 @@ builder.Services
     .AddPresentation()
     .AddInfrastructure(builder.Configuration);
 
+builder.Services.AddApiVersionService();
+
 builder.Services.AddEndpoints(Assembly.GetExecutingAssembly());
 
 var app = builder.Build();
 
-app.MapEndpoints();
+ApiVersionSet apiVersionSet = app.NewApiVersionSet()
+    .HasApiVersion(new ApiVersion(1))
+    .ReportApiVersions()
+    .Build();
+
+RouteGroupBuilder versioningGroup = app.MapGroup("api/v{version:apiVersion}")
+    .WithApiVersionSet(apiVersionSet);
+
+app.MapEndpoints(versioningGroup);
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
