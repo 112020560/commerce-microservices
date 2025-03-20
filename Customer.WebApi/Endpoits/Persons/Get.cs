@@ -1,7 +1,7 @@
-using Application.Persons.Get;
-using Auth.WebApi.Extensions;
+using Customer.WebApi.Extensions;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Persons.Application.Get;
 using SharedKernel;
 
 namespace Customer.WebApi.Endpoits.Persons;

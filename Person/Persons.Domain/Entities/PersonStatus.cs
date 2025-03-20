@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Person.Domain.Entities;
+namespace Persons.Domain.Entities;
 
 [Table(name:"person_status", Schema ="crm")]
 public class PersonStatus

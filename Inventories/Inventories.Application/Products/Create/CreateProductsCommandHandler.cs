@@ -1,11 +1,10 @@
-using System;
-using Application.Abstractions.Data;
-using Application.Abstractions.Messaging;
-using Domain.Models.retail;
+using Inventories.Application.Abstractions.Data;
+using Inventories.Application.Abstractions.Messaging;
+using Inventories.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using SharedKernel;
 
-namespace Application.Products.Create;
+namespace Inventories.Application.Products.Create;
 
 internal sealed class CreateProductsCommandHandler : ICommandHandler<CreateProductsCommand, ResponseObject>
 {

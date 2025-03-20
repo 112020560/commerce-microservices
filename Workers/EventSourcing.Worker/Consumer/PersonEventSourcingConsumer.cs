@@ -1,13 +1,20 @@
 using System;
+using EventSourcing.Application.Create;
 using MassTransit;
+using MediatR;
 using SharedKernel.Contracts;
 
 namespace EventSourcing.Worker.Consumer;
 
-public class EventSourcingConsumer : IConsumer<IEvent>
+public class PersonEventSourcingConsumer(IMediator mediator) : IConsumer<PersonCreatedEvent>
 {
-    public Task Consume(ConsumeContext<IEvent> context)
+    public async Task Consume(ConsumeContext<PersonCreatedEvent> context)
     {
-        throw new NotImplementedException();
+        await mediator.Publish(
+            new CreateEventSoursingCommand(
+                context.Message.AggregateId,
+                context.Message.EventType,
+                context.Message.EventData,
+                context.Message.Timestamp));
     }
 }

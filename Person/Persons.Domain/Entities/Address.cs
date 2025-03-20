@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
-using Domain.Models.crm;
 
 namespace Persons.Domain.Entities;
 
@@ -22,7 +21,7 @@ public partial class Address
 
     public int Type { get; set; }
 
-    public virtual global::Domain.Models.crm.Person? Person { get; set; }
+    public virtual global::Persons.Domain.Entities.Person? Person { get; set; }
 
     public virtual AddressType TypeNavigation { get; set; } = null!;
 }

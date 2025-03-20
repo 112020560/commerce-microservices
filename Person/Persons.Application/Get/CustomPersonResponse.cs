@@ -1,4 +1,4 @@
-namespace Application.Persons.Get;
+namespace Persons.Application.Get;
 
 public record class CustomPersonResponse
 {

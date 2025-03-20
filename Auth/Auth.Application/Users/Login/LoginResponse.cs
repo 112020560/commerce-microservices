@@ -1,4 +1,4 @@
-namespace Application.Users.Login;
+namespace Auth.Application.Users.Login;
 
 public class LoginResponse
 {

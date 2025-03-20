@@ -1,11 +1,10 @@
-using Application.Persons.Get;
 using Microsoft.EntityFrameworkCore;
 using Persons.Application.Abstractions.Data;
 using Persons.Application.Abstractions.Messaging;
 using Persons.Domain.Entities;
 using SharedKernel;
 
-namespace Persons.Application.Persons.Get;
+namespace Persons.Application.Get;
 
 internal sealed class GetAllPersonQueryHandler : Utility, IQueryHandler<GetAllPersonsQuery, ResponseObject<List<CustomPersonResponse>>>
 {

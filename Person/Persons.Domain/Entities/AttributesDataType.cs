@@ -1,4 +1,4 @@
-﻿namespace Person.Domain.Entities;
+﻿namespace Persons.Domain.Entities;
 
 public partial class AttributesDataType
 {

@@ -3,7 +3,7 @@ using EventSourcing.Application.Abstractions;
 using MediatR;
 using Microsoft.Extensions.Logging;
 
-namespace EventSourcing.Application.Person.Create;
+namespace EventSourcing.Application.Create;
 
 internal sealed class CreateEventSoursingCommandHandler(IEventSourcingService eventSourcingService, ILogger<CreateEventSoursingCommandHandler> logger) : INotificationHandler<CreateEventSoursingCommand>
 {

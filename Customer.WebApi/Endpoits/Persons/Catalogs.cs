@@ -1,8 +1,7 @@
-using System;
-using Application.Persons.Catalogs;
-using Auth.WebApi.Extensions;
+using Customer.WebApi.Extensions;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Persons.Application.Catalogs;
 using SharedKernel;
 
 namespace Customer.WebApi.Endpoits.Persons;

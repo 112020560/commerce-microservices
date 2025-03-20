@@ -1,14 +1,13 @@
 using System.Reflection;
-using Application;
 using Asp.Versioning;
 using Asp.Versioning.Builder;
-using Auth.WebApi.Extensions;
 using Customer.WebApi;
 using Customer.WebApi.Extensions;
 using HealthChecks.UI.Client;
-using Infrastructure;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Serilog;
+using Persons.Application;
+using Persons.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 

@@ -1,7 +1,4 @@
-﻿using Person.Domain.Entities;
-using Attribute = Person.Domain.Entities.Attribute;
-
-namespace Domain.Models.crm;
+﻿namespace Persons.Domain.Entities;
 
 public partial class Person
 {

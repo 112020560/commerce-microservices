@@ -1,9 +1,8 @@
 using System.Linq.Expressions;
-using Application.Persons.Get;
 using LinqKit;
 using Persons.Domain.Entities;
 
-namespace Persons.Application.Persons.Get;
+namespace Persons.Application.Get;
 
 public abstract class Utility
 {

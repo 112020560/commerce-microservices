@@ -1,6 +1,4 @@
-﻿using Domain.Models.crm;
-
-namespace Domain.Models.retail;
+﻿namespace Inventories.Domain.Entities;
 
 public partial class Document
 {
@@ -22,7 +20,7 @@ public partial class Document
 
     public virtual DocumentType? DocumentType { get; set; }
 
-    public virtual Person? Person { get; set; }
+    //public virtual Person? Person { get; set; }
 
     public virtual DocumentStatus? Status { get; set; }
 }

@@ -1,6 +1,8 @@
-using Person.Domain.Entities;
+using Microsoft.EntityFrameworkCore;
+using Persons.Domain.Entities;
+using Attribute = Persons.Domain.Entities.Attribute;
 
-namespace Person.Application.Abstractions.Data;
+namespace Persons.Application.Abstractions.Data;
 
 public interface IApplicationDbContext
 {
@@ -8,7 +10,7 @@ public interface IApplicationDbContext
 
     DbSet<AddressType> AddressTypes {get; set;}
 
-    DbSet<Domain.Entities.Attribute> Attributes {get; set;}
+    DbSet<Attribute> Attributes {get; set;}
 
     DbSet<AttributesDataType> AttributesDataTypes {get; set;}
 

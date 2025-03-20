@@ -4,7 +4,7 @@ using Persons.Application.Abstractions.Messaging;
 using Persons.Domain.Entities;
 using SharedKernel;
 
-namespace Persons.Application.Persons.Create;
+namespace Persons.Application.Create;
 
 public class CreatePersonCommandHadler : ICommandHandler<CreatePersonCommand, ResponseObject>
 {

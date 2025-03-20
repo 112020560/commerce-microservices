@@ -1,6 +1,6 @@
-using Application.Abstractions.Messaging;
+using Inventories.Application.Abstractions.Messaging;
 using SharedKernel;
 
-namespace Application.Products.Create;
+namespace Inventories.Application.Products.Create;
 
 public record class CreateProductsCommand(CreateProductRequest CreateProduct): ICommand<ResponseObject>;

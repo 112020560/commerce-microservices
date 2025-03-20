@@ -3,7 +3,7 @@ using MassTransit;
 namespace SharedKernel.Contracts;
 
 [EntityName("user-create-event")]
-public record  UserRegisterEvent(Guid AggregateId, string AggregateType, string Name, int Stock) : IEvent
+public record  UserRegisterEvent(Guid AggregateId, string EventType, object EventData) : IEvent
 {
     public DateTime Timestamp { get; } = DateTime.UtcNow;
 }

@@ -1,8 +1,7 @@
-using System;
 using MediatR;
 using SharedKernel;
 
-namespace Application.Abstractions.Messaging;
+namespace Persons.Application.Abstractions.Messaging;
 
 public interface ICommand : IRequest<Result>, IBaseCommand;
 

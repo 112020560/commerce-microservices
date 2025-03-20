@@ -1,13 +1,12 @@
-using System;
-using Application.Abstractions.Messaging;
+using Auth.Application.Abstractions.Messaging;
 using SharedKernel;
 
-namespace Application.Users.Register;
+namespace Auth.Application.Users.Register;
 
 public sealed record RegisterUserCommand(
     string UserName, 
     string Password, 
     string FullName,
     string? SystemUser,
-    int[]? Roles
+    Guid[]? Roles
     ): ICommand<ResponseObject>;

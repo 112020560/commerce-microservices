@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 
-namespace Domain.Models.retail;
+namespace Inventories.Domain.Entities;
 
 public partial class Brand
 {

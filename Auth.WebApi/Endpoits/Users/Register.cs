@@ -1,4 +1,4 @@
-using Application.Users.Register;
+using Auth.Application.Users.Register;
 using Auth.WebApi.Extensions;
 using MediatR;
 using SharedKernel;

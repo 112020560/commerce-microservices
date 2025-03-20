@@ -1,6 +1,5 @@
+using MediatR;
+
 namespace EventSourcing.Application.Create;
 
-public record class CreateEventSoursingCommand
-{
-
-}
+public record CreateEventSoursingCommand(Guid AggregateId,  string EventType, object EventData, DateTime Timestamp): INotification;

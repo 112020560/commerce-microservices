@@ -28,8 +28,9 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Application\Application.csproj" />
-      <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
+      <ProjectReference Include="..\Person\Persons.Application\Persons.Application.csproj" />
+      <ProjectReference Include="..\Person\Persons.Infrastructure\Persons.Infrastructure.csproj" />
+      <ProjectReference Include="..\SharedKernel\SharedKernel.csproj" />
     </ItemGroup>
 
 </Project>

@@ -1,13 +1,12 @@
-using Application.Abstractions.Authentication;
-using Application.Abstractions.Data;
-using Application.Abstractions.Messaging;
-using Domain.Models.Auth;
+using Auth.Application.Abstractions;
+using Auth.Application.Abstractions.Messaging;
+using Auth.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using SharedKernel;
 using SharedKernel.Exceptions;
 
-namespace Application.Users.Login;
+namespace Auth.Application.Users.Login;
 
 public class LoginUserCommandHandler : ICommandHandler<LoginUserCommand, ResponseObject<LoginResponse>>
 {

@@ -1,7 +1,6 @@
-using System;
 using SharedKernel;
 
-namespace Auth.WebApi.Extensions;
+namespace Customer.WebApi.Extensions;
 
 public static class ResultExtensions
 {

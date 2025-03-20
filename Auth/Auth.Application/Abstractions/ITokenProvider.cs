@@ -1,7 +1,6 @@
-using System;
-using Domain.Models.Auth;
+using Auth.Domain.Entities;
 
-namespace Application.Abstractions.Authentication;
+namespace Auth.Application.Abstractions;
 
 public interface ITokenProvider
 {

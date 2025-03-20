@@ -1,6 +1,6 @@
-using Application.Persons.Create;
-using Auth.WebApi.Extensions;
+using Customer.WebApi.Extensions;
 using MediatR;
+using Persons.Application.Create;
 using SharedKernel;
 
 namespace Customer.WebApi.Endpoits.Persons;

@@ -1,6 +1,4 @@
-﻿using Domain.Models.crm;
-
-namespace Person.Domain.Entities;
+﻿namespace Persons.Domain.Entities;
 
 public partial class Attribute
 {
@@ -16,5 +14,5 @@ public partial class Attribute
 
     public virtual AttributesDataType DataTypeNavigation { get; set; } = null!;
 
-    public virtual global::Domain.Models.crm.Person? Person { get; set; }
+    public virtual global::Persons.Domain.Entities.Person? Person { get; set; }
 }

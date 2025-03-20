@@ -1,35 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Auth.Application.Abstractions;
+using Auth.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace Auth.Infrastructure;
+namespace Auth.Infrastructure.Scaffold_Out.Context;
 
-public partial class AuthDbContext : DbContext
+public partial class AuthDbContext(DbContextOptions<AuthDbContext> options) : DbContext(options), IApplicationDbContext
 {
-    public AuthDbContext()
+    public DbSet<AuthMenuOption> AuthMenuOptions { get; set; }
+
+    public DbSet<AuthModule> AuthModules { get; set; }
+
+    public DbSet<AuthRole> AuthRoles { get; set; }
+
+    public DbSet<AuthRoleModule> AuthRoleModules { get; set; }
+
+    public DbSet<AuthUser> AuthUsers { get; set; }
+
+    public DbSet<AuthUserRole> AuthUserRoles { get; set; }
+
+    public IQueryable<T> Query<T>() where T : class
     {
+        return Set<T>();
     }
 
-    public AuthDbContext(DbContextOptions<AuthDbContext> options)
-        : base(options)
-    {
-    }
-
-    public virtual DbSet<AuthMenuOption> AuthMenuOptions { get; set; }
-
-    public virtual DbSet<AuthModule> AuthModules { get; set; }
-
-    public virtual DbSet<AuthRole> AuthRoles { get; set; }
-
-    public virtual DbSet<AuthRoleModule> AuthRoleModules { get; set; }
-
-    public virtual DbSet<AuthUser> AuthUsers { get; set; }
-
-    public virtual DbSet<AuthUserRole> AuthUserRoles { get; set; }
-
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=access_control;Username=root;Password=root;Include Error Detail=true");
+    //     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    // #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
+    //         => optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=access_control;Username=root;Password=root;Include Error Detail=true");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

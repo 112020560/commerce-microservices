@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Auth.Infrastructure;
+﻿namespace Auth.Domain.Entities;
 
 public partial class AuthUser
 {

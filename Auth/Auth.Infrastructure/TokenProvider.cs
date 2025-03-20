@@ -1,12 +1,12 @@
 using System.Security.Claims;
 using System.Text;
-using Application.Abstractions.Authentication;
-using Domain.Models.Auth;
+using Auth.Application.Abstractions;
+using Auth.Domain.Entities;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.JsonWebTokens;
 using Microsoft.IdentityModel.Tokens;
 
-namespace Infrastructure.Authentication;
+namespace Auth.Infrastructure;
 
 internal sealed class TokenProvider(IConfiguration configuration) : ITokenProvider
 {

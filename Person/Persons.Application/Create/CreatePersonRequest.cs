@@ -1,4 +1,4 @@
-namespace Application.Persons.Create;
+namespace Persons.Application.Create;
 
 public record CreatePersonRequest
 {

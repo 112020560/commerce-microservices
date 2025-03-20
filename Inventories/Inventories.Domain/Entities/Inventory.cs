@@ -1,4 +1,4 @@
-﻿namespace Domain.Models.retail;
+﻿namespace Inventories.Domain.Entities;
 
 public partial class Inventory
 {

@@ -4,7 +4,7 @@ using Persons.Application.Abstractions.Messaging;
 using Persons.Domain.Entities;
 using SharedKernel;
 
-namespace Persons.Application.Persons.Catalogs;
+namespace Persons.Application.Catalogs;
 
 internal sealed class GetPersonCatalogsQueryHandler : IQueryHandler<GetPersonCatalogsQuery, Dictionary<string, List<CatalogResponse>>>
 {

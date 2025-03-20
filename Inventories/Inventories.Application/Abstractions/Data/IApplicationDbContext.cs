@@ -1,20 +1,10 @@
-using System;
-using Domain.Models.Auth;
-using Domain.Models.crm;
-using Domain.Models.retail;
+using Inventories.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace Application.Abstractions.Data;
+namespace Inventories.Application.Abstractions.Data;
 
 public interface IApplicationDbContext
 {
-    DbSet<Address> Addresses { get;  set;}
-
-    DbSet<AddressType> AddressTypes {get; set;}
-
-    DbSet<Domain.Models.crm.Attribute> Attributes {get; set;}
-
-    DbSet<AttributesDataType> AttributesDataTypes {get; set;}
 
     DbSet<Brand> Brands {get; set;}
 
@@ -35,29 +25,7 @@ public interface IApplicationDbContext
     DbSet<InventoryMovementDetail> InventoryMovementDetails {get; set;}
 
     DbSet<Location> Locations {get; set;}
-
-    DbSet<MenuOption> MenuOptions {get; set;}
-
-    DbSet<Module> Modules {get; set;}
-
-    DbSet<Person> Person { get; set; }
-
-    DbSet<PersonRelationship> PersonRelationships {get; set;}
-
-    DbSet<PersonType> PersonTypes {get; set;}
-
-    DbSet<Product> Products {get; set;}
-
-    DbSet<RelationshipType> RelationshipTypes {get; set;}
-
-    DbSet<Role> Roles {get; set;}
-
-    DbSet<RoleModule> RoleModules {get; set;}
-
-    DbSet<User> Users {get; set;}
-
-    DbSet<UserRole> UserRoles {get; set;}
-    DbSet<PersonStatus> PersonStatus {get; set;}
+    DbSet<Product> Products { get; set;}
 
     IQueryable<T> Query<T>() where T : class;
 

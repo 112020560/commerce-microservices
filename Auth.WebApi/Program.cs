@@ -1,9 +1,9 @@
 using System.Reflection;
-using Application;
+using Auth.Application;
+using Auth.Infrastructure;
 using Auth.WebApi;
 using Auth.WebApi.Extensions;
 using HealthChecks.UI.Client;
-using Infrastructure;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Serilog;
 
@@ -20,6 +20,9 @@ builder.Services
     .AddInfrastructure(builder.Configuration);
 
     builder.Services.AddEndpoints(Assembly.GetExecutingAssembly());
+
+    builder.Services.ConfigureMasstransit(builder.Configuration);
+    builder.Services.ConfigureSharedService();
 
 var app = builder.Build();
 

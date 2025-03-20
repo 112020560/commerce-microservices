@@ -16,3 +16,9 @@
     build:
       context: .
       dockerfile: Inventory.WebApi/Dockerfile
+
+  eventsourcing.worker:
+    image: eventsourcing.worker
+    build:
+      context: .
+      dockerfile: Workers/EventSourcing.Worker/Dockerfile

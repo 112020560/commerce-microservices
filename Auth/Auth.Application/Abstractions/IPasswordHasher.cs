@@ -1,6 +1,4 @@
-using System;
-
-namespace Application.Abstractions.Authentication;
+namespace Auth.Application.Abstractions;
 
 public interface IPasswordHasher
 {

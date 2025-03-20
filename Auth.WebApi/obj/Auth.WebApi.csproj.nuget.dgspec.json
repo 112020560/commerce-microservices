@@ -4,98 +4,6 @@
     "/Users/home/Documents/GitHub/commerce/microservices/Auth.WebApi/Auth.WebApi.csproj": {}
   },
   "projects": {
-    "/Users/home/Documents/GitHub/commerce/microservices/Application/Application.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "/Users/home/Documents/GitHub/commerce/microservices/Application/Application.csproj",
-        "projectName": "Application",
-        "projectPath": "/Users/home/Documents/GitHub/commerce/microservices/Application/Application.csproj",
-        "packagesPath": "/Users/home/.nuget/packages/",
-        "outputPath": "/Users/home/Documents/GitHub/commerce/microservices/Application/obj/",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "/Users/home/.nuget/NuGet/NuGet.Config"
-        ],
-        "originalTargetFrameworks": [
-          "net9.0"
-        ],
-        "sources": {
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net9.0": {
-            "targetAlias": "net9.0",
-            "projectReferences": {
-              "/Users/home/Documents/GitHub/commerce/microservices/Domain/Domain.csproj": {
-                "projectPath": "/Users/home/Documents/GitHub/commerce/microservices/Domain/Domain.csproj"
-              },
-              "/Users/home/Documents/GitHub/commerce/microservices/SharedKernel/SharedKernel.csproj": {
-                "projectPath": "/Users/home/Documents/GitHub/commerce/microservices/SharedKernel/SharedKernel.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "all"
-        },
-        "SdkAnalysisLevel": "9.0.100"
-      },
-      "frameworks": {
-        "net9.0": {
-          "targetAlias": "net9.0",
-          "dependencies": {
-            "FluentValidation.DependencyInjectionExtensions": {
-              "target": "Package",
-              "version": "[11.11.0, )"
-            },
-            "LinqKit.Microsoft.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[9.0.8, )"
-            },
-            "MediatR": {
-              "target": "Package",
-              "version": "[12.4.1, )"
-            },
-            "Microsoft.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[9.0.2, )"
-            },
-            "Microsoft.Extensions.Logging.Abstractions": {
-              "target": "Package",
-              "version": "[9.0.2, )"
-            },
-            "Serilog": {
-              "target": "Package",
-              "version": "[4.2.0, )"
-            }
-          },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.100/PortableRuntimeIdentifierGraph.json"
-        }
-      }
-    },
     "/Users/home/Documents/GitHub/commerce/microservices/Auth.WebApi/Auth.WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -118,8 +26,11 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "/Users/home/Documents/GitHub/commerce/microservices/Application/Application.csproj": {
-                "projectPath": "/Users/home/Documents/GitHub/commerce/microservices/Application/Application.csproj"
+              "/Users/home/Documents/GitHub/commerce/microservices/Auth/Auth.Application/Auth.Application.csproj": {
+                "projectPath": "/Users/home/Documents/GitHub/commerce/microservices/Auth/Auth.Application/Auth.Application.csproj"
+              },
+              "/Users/home/Documents/GitHub/commerce/microservices/Auth/Auth.Infrastructure/Auth.Infrastructure.csproj": {
+                "projectPath": "/Users/home/Documents/GitHub/commerce/microservices/Auth/Auth.Infrastructure/Auth.Infrastructure.csproj"
               },
               "/Users/home/Documents/GitHub/commerce/microservices/Infrastructure/Infrastructure.csproj": {
                 "projectPath": "/Users/home/Documents/GitHub/commerce/microservices/Infrastructure/Infrastructure.csproj"
@@ -146,6 +57,18 @@
             "AspNetCore.HealthChecks.UI.Client": {
               "target": "Package",
               "version": "[9.0.0, )"
+            },
+            "MassTransit": {
+              "target": "Package",
+              "version": "[8.3.6, )"
+            },
+            "MassTransit.RabbitMQ": {
+              "target": "Package",
+              "version": "[8.3.6, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[9.0.2, )"
             },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
@@ -195,14 +118,102 @@
         }
       }
     },
-    "/Users/home/Documents/GitHub/commerce/microservices/Domain/Domain.csproj": {
+    "/Users/home/Documents/GitHub/commerce/microservices/Auth/Auth.Application/Auth.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/home/Documents/GitHub/commerce/microservices/Domain/Domain.csproj",
-        "projectName": "Domain",
-        "projectPath": "/Users/home/Documents/GitHub/commerce/microservices/Domain/Domain.csproj",
+        "projectUniqueName": "/Users/home/Documents/GitHub/commerce/microservices/Auth/Auth.Application/Auth.Application.csproj",
+        "projectName": "Auth.Application",
+        "projectPath": "/Users/home/Documents/GitHub/commerce/microservices/Auth/Auth.Application/Auth.Application.csproj",
         "packagesPath": "/Users/home/.nuget/packages/",
-        "outputPath": "/Users/home/Documents/GitHub/commerce/microservices/Domain/obj/",
+        "outputPath": "/Users/home/Documents/GitHub/commerce/microservices/Auth/Auth.Application/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/home/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "/Users/home/Documents/GitHub/commerce/microservices/Auth/Auth.Domain/Auth.Domain.csproj": {
+                "projectPath": "/Users/home/Documents/GitHub/commerce/microservices/Auth/Auth.Domain/Auth.Domain.csproj"
+              },
+              "/Users/home/Documents/GitHub/commerce/microservices/SharedKernel/SharedKernel.csproj": {
+                "projectPath": "/Users/home/Documents/GitHub/commerce/microservices/SharedKernel/SharedKernel.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "all"
+        },
+        "SdkAnalysisLevel": "9.0.100"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[11.11.0, )"
+            },
+            "FluentValidation.DependencyInjectionExtensions": {
+              "target": "Package",
+              "version": "[11.11.0, )"
+            },
+            "MediatR": {
+              "target": "Package",
+              "version": "[12.4.1, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.2, )"
+            },
+            "Serilog": {
+              "target": "Package",
+              "version": "[4.2.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/home/Documents/GitHub/commerce/microservices/Auth/Auth.Domain/Auth.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/home/Documents/GitHub/commerce/microservices/Auth/Auth.Domain/Auth.Domain.csproj",
+        "projectName": "Auth.Domain",
+        "projectPath": "/Users/home/Documents/GitHub/commerce/microservices/Auth/Auth.Domain/Auth.Domain.csproj",
+        "packagesPath": "/Users/home/.nuget/packages/",
+        "outputPath": "/Users/home/Documents/GitHub/commerce/microservices/Auth/Auth.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/home/.nuget/NuGet/NuGet.Config"
@@ -254,14 +265,14 @@
         }
       }
     },
-    "/Users/home/Documents/GitHub/commerce/microservices/Infrastructure/Infrastructure.csproj": {
+    "/Users/home/Documents/GitHub/commerce/microservices/Auth/Auth.Infrastructure/Auth.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/home/Documents/GitHub/commerce/microservices/Infrastructure/Infrastructure.csproj",
-        "projectName": "Infrastructure",
-        "projectPath": "/Users/home/Documents/GitHub/commerce/microservices/Infrastructure/Infrastructure.csproj",
+        "projectUniqueName": "/Users/home/Documents/GitHub/commerce/microservices/Auth/Auth.Infrastructure/Auth.Infrastructure.csproj",
+        "projectName": "Auth.Infrastructure",
+        "projectPath": "/Users/home/Documents/GitHub/commerce/microservices/Auth/Auth.Infrastructure/Auth.Infrastructure.csproj",
         "packagesPath": "/Users/home/.nuget/packages/",
-        "outputPath": "/Users/home/Documents/GitHub/commerce/microservices/Infrastructure/obj/",
+        "outputPath": "/Users/home/Documents/GitHub/commerce/microservices/Auth/Auth.Infrastructure/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/home/.nuget/NuGet/NuGet.Config"
@@ -276,11 +287,11 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "/Users/home/Documents/GitHub/commerce/microservices/Application/Application.csproj": {
-                "projectPath": "/Users/home/Documents/GitHub/commerce/microservices/Application/Application.csproj"
+              "/Users/home/Documents/GitHub/commerce/microservices/Auth/Auth.Application/Auth.Application.csproj": {
+                "projectPath": "/Users/home/Documents/GitHub/commerce/microservices/Auth/Auth.Application/Auth.Application.csproj"
               },
-              "/Users/home/Documents/GitHub/commerce/microservices/Domain/Domain.csproj": {
-                "projectPath": "/Users/home/Documents/GitHub/commerce/microservices/Domain/Domain.csproj"
+              "/Users/home/Documents/GitHub/commerce/microservices/Auth/Auth.Domain/Auth.Domain.csproj": {
+                "projectPath": "/Users/home/Documents/GitHub/commerce/microservices/Auth/Auth.Domain/Auth.Domain.csproj"
               }
             }
           }
@@ -329,9 +340,138 @@
               "target": "Package",
               "version": "[9.0.2, )"
             },
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[9.0.3, )"
+            },
+            "Microsoft.Extensions.Configuration.Binder": {
+              "target": "Package",
+              "version": "[9.0.3, )"
+            },
             "Microsoft.Extensions.Diagnostics.HealthChecks": {
               "target": "Package",
               "version": "[9.0.2, )"
+            },
+            "Microsoft.IdentityModel.JsonWebTokens": {
+              "target": "Package",
+              "version": "[8.0.1, )"
+            },
+            "Microsoft.IdentityModel.Tokens": {
+              "target": "Package",
+              "version": "[8.0.1, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[9.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/home/Documents/GitHub/commerce/microservices/Infrastructure/Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/home/Documents/GitHub/commerce/microservices/Infrastructure/Infrastructure.csproj",
+        "projectName": "Infrastructure",
+        "projectPath": "/Users/home/Documents/GitHub/commerce/microservices/Infrastructure/Infrastructure.csproj",
+        "packagesPath": "/Users/home/.nuget/packages/",
+        "outputPath": "/Users/home/Documents/GitHub/commerce/microservices/Infrastructure/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/home/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "/Users/home/Documents/GitHub/commerce/microservices/SharedKernel/SharedKernel.csproj": {
+                "projectPath": "/Users/home/Documents/GitHub/commerce/microservices/SharedKernel/SharedKernel.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "all"
+        },
+        "SdkAnalysisLevel": "9.0.100"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "AspNetCore.HealthChecks.NpgSql": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "MassTransit": {
+              "target": "Package",
+              "version": "[8.3.6, )"
+            },
+            "MassTransit.RabbitMQ": {
+              "target": "Package",
+              "version": "[8.3.6, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[9.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[9.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.2, )"
+            },
+            "Microsoft.Extensions.Diagnostics.HealthChecks": {
+              "target": "Package",
+              "version": "[9.0.2, )"
+            },
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[3.2.1, )"
             },
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
@@ -397,6 +537,12 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
+          "dependencies": {
+            "MassTransit": {
+              "target": "Package",
+              "version": "[8.3.6, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
