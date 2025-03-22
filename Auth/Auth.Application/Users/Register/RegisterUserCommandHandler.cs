@@ -1,4 +1,3 @@
-using System.Text.Json;
 using Auth.Application.Abstractions;
 using Auth.Application.Abstractions.Messaging;
 using Auth.Domain.Entities;
@@ -58,7 +57,7 @@ internal sealed class RegisterUserCommandHandler : ICommandHandler<RegisterUserC
         await _dbContext.SaveChangesAsync(cancellationToken);
 
         await _producerService.SendCommand<UserRegisterEvent>(
-            new UserRegisterEvent(Guid.NewGuid(),  "UserCreate", request), 
+            new UserRegisterEvent(entity.Entity.Id,  "UserCreate", request), 
             Queues.USERS_EVENTSOURCING_QUEUE, Guid.NewGuid().ToString("N"), cancellationToken);
         
         return new Result<ResponseObject>(new ResponseObject
@@ -67,11 +66,5 @@ internal sealed class RegisterUserCommandHandler : ICommandHandler<RegisterUserC
             Message = "User created successfully",
             Timestamp = _dateTimeProvider.UtcNow
         }, true, Error.None);
-        
-        // return new ResponseObject {
-        //     IsSuccess = true,
-        //     Message = "User created successfully",
-        //     Timestamp = _dateTimeProvider.UtcNow,
-        // };
     }
 }

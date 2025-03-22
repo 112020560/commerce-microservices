@@ -26,9 +26,9 @@ public class LoginUserCommandHandler : ICommandHandler<LoginUserCommand, Respons
     }
     public async Task<Result<ResponseObject<LoginResponse>>> Handle(LoginUserCommand request, CancellationToken cancellationToken)
     {
-        var user = await _dbContext.Query<User>()
+        var user = await _dbContext.Query<AuthUser>()
                 .AsNoTracking()
-                .FirstOrDefaultAsync(x => x.Username == request.UserNamne, cancellationToken: cancellationToken)
+                .FirstOrDefaultAsync(x => x.UserName == request.UserNamne, cancellationToken: cancellationToken)
                 ?? throw new UnAuthorizerException("User not found");
         
         if (!_passwordHasher.Verify(request.Password, user.Password))
@@ -36,7 +36,7 @@ public class LoginUserCommandHandler : ICommandHandler<LoginUserCommand, Respons
             throw new UnAuthorizerException("Invalid Password");
         }
 
-        _logger.LogInformation("User {Username} logged in successfully.", user.Username);
+        _logger.LogInformation("User {Username} logged in successfully.", user.UserName);
 
         return new ResponseObject<LoginResponse>
         {

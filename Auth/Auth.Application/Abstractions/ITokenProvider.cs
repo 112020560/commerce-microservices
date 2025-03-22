@@ -4,5 +4,5 @@ namespace Auth.Application.Abstractions;
 
 public interface ITokenProvider
 {
-    string Create(User user);
+    string Create(AuthUser user);
 }
